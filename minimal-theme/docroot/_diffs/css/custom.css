@@ -1,0 +1,202 @@
+
+/* ---------- Site breadcrumbs ---------- */
+
+.site-breadcrumbs {
+	margin: 0 0 5px;
+	width: auto;
+}
+
+.site-breadcrumbs ul {
+	background-color: #FFF;
+	border: 1px solid #DEDEDE;
+	border-color: #C0C2C5;
+	margin: 0;
+}
+
+.site-breadcrumbs li {
+	background-image: none;
+	margin-right: 0;
+	padding-left: 0.75em;
+	padding-right: 0;
+}
+
+.site-breadcrumbs li span {
+	background: url(../images/common/breadcrumbs.png) no-repeat 100% 50%;
+	display: block;
+	padding: 0.5em 15px 0.5em 0;
+}
+
+.site-breadcrumbs li span a {
+	text-decoration: none;
+}
+
+.site-breadcrumbs li.first a {
+	color: #369;
+	font-weight: bold;
+}
+
+.site-breadcrumbs li.last a {
+	color: #4B5567;
+	font-size: 1.3em;
+}
+
+.site-breadcrumbs .last {
+	font-size: 1em;
+	margin-top: 0;
+	padding-right: 0;
+}
+
+.site-breadcrumbs .last span {
+	background-image: none;
+	padding: 0;
+}
+
+/* ---------- Hudcrumbs ---------- */
+
+.lfr-hudcrumbs {
+	position: fixed;
+	top: 0;
+	z-index: 440;
+}
+
+.lfr-hudcrumbs ul {
+	background: #414445;
+	background: rgba(0, 0, 0, 0.8);
+}
+
+.lfr-hudcrumbs .breadcrumbs li a, .lfr-hudcrumbs .breadcrumbs li span {
+	color: #FFF;
+}
+
+.lfr-hudcrumbs li span {
+	background-image: url(../images/common/breadcrumbs_hud.png);
+}
+
+/* ---------- Misc. ---------- */
+
+.lfr-panel-container {
+	background-color: transparent;
+}
+
+.aui-combobox .aui-field-input {
+	padding: 4px 3px 3px;
+	font-size: 11px;
+	height: 15px;
+}
+
+.aui-combobox .aui-field {
+	float: left;
+	line-height: 0;
+}
+
+.lfr-portlet-title-editable-content .aui-field {
+	float: none;
+	display: inline;
+}
+
+/* ---------- Extras ---------- */
+
+.portlet-borderless-bar {
+	-moz-border-radius: 20px;
+	-moz-box-shadow: inset 0 1px 3px #000;
+	-webkit-border-radius: 20px;
+	-webkit-box-shadow: inset 0 1px 3px #000;
+	border-radius: 20px;
+	box-shadow: inset 0 1px 3px #000;
+}
+
+.portlet-topper {
+	-moz-box-shadow: 1px 1px 0 #FFF;
+	-webkit-box-shadow: 1px 1px 0 #FFF;
+	box-shadow: 1px 1px 0 #FFF;
+}
+
+.logo .current-site {
+	-moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5), 1px 1px 0 #FFF;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5), 1px 1px 0 #FFF;
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5), 1px 1px 0 #FFF;
+}
+
+#navigation li.selected a {
+	-moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8);
+	-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8);
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.aui-combobox .aui-toolbar-first {
+	-moz-border-radius-topleft: 0;
+	-moz-border-radius-bottomleft: 0;
+	-webkit-border-top-left-radius: 0;
+	-webkit-border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+
+/* ---------- Portlet wrapper and icons ---------- */
+
+.portlet {
+	background-color: #EEF0F2;
+	border: 1px solid #C8C9CA;
+	margin: 0 0 10px;
+	padding: 3px;
+	text-align: left;
+}
+
+.portlet-topper {
+	background: #D4D4D4 url(../images/portlet/header_bg.png) repeat-x 0 0;
+	border: 1px solid;
+	border-color: #C8C9CA #9E9E9E #9E9E9E #C8C9CA;
+	font-size: 1.1em;
+}
+
+.portlet-title {
+	color: #222;
+	float: none;
+	font-weight: bold;
+	min-width: 50%;
+	padding: 5px;
+	text-shadow: 1px 1px #FFF;
+}
+
+.lfr-portlet-title-editable {
+	margin-top: -4px;
+	z-index: 9999;
+}
+
+.ie .lfr-portlet-title-editable {
+	margin-top: -6px;
+}
+
+.lfr-portlet-title-editable-content {
+	padding: 0;
+}
+
+.ie .lfr-portlet-title-editable-content {
+	margin-top: 4px;
+}
+
+.portlet-icons {
+	float: none;
+}
+
+.portlet-icons .portlet-close-icon {
+	border-width: 0;
+}
+
+.page-maximized .portlet-icons {
+	font-size: 11px;
+}
+
+.portlet-icon-back {
+}
+
+.ie .portlet-title {
+	padding-bottom: 5px;
+}
+
+.ie6 .portlet-topper {
+	zoom: 1;
+}
+
+/* ---------- Footer ---------- */
