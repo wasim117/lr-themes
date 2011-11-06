@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="#language("lang.dir")" dir="#language("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>Styled $the_title - $company_name</title>
+	$theme.include($top_head_include)
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script> 
+	<script type="text/javascript"> 
+	jQuery(document).ready(function(){
+	jQuery("ul.subnav").parent().append("<span></span>"); 
+	jQuery("ul.topnav li span").click(function() {
+		jQuery(this).parent().find("ul.subnav").slideDown('fast').show();
+		jQuery(this).parent().hover(function() {
+		}, function(){	
+			jQuery(this).parent().find("ul.subnav").slideUp('slow');
+		});
+		}).hover(function() { 
+			jQuery(this).addClass("subhover");
+		}, function(){
+			jQuery(this).removeClass("subhover");
+	});
+	});
+</script>
+
+</head>
+
+#if($is_signed_in)
+	<body class="$css_class logged-in">
+#else
+	<body class="$css_class">
+#end
+	
+#if($is_signed_in)
+	#dockbar()
+#end
+
+
+
+
+<div id="wrapper">
+	<div id="header">
+    	<h1 class="title">$company_name</h1>
+	
+		#if ($has_navigation)
+			#parse ("$full_templates_path/navigation.vm")
+		#end
+
+	<div id="content">
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+
+			$portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+	</div>
+
+	<footer id="footer" role="contentinfo">
+		<p class="powered-by">
+		&copy; $company_name 
+			#language("powered-by") <a href="http://www.liferay.com" rel="external">Liferay</a>
+		</p>
+	</footer>
+</div>
+
+</body>
+
+$theme.include($bottom_include)
+
+</html>
