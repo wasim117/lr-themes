@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+#parse ($init)
+
+<html class="#language("lang.dir")" dir="#language("lang.dir")" lang="$w3c_language_id">
+
+<head>
+	<title>$the_title - $company_name</title>
+
+	$theme.include($top_head_include)
+</head>
+
+<body class="$css_class">
+
+#if($is_signed_in)
+	#dockbar()
+#end
+<header class="body" id="banner">
+		<h1><a href="#">$company_name<strong>HTML5 theme for Liferay</strong></a></h1>
+		#if ($has_navigation)
+			#parse ("$full_templates_path/navigation.vm")
+		#end	</header>
+<div id="wrapper">
+	<a href="#main-content" id="skip-to-content">#language("skip-to-content")</a>
+
+
+	<div id="content">
+	
+
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+
+			$portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+	</div>
+
+	
+</div>
+<footer class="body" id="contentinfo">
+		<address class="vcard body" id="about">
+			<span class="primary">
+				<strong><a class="fn url" href="#">Smashing Magazine</a></strong>
+				<span class="role">Amazing Magazine</span>
+			</span><!-- /.primary -->
+		
+			<img class="photo" alt="Smashing Magazine Logo" src="http://media.smashingmagazine.com/cdn_smash/wp-content/uploads/images/smashing-html5/files/images/avatar.gif">
+		
+			<span class="bio">Smashing Magazine is a website and blog that offers resources and advice to web developers and web designers. It was founded by Sven Lennartz and Vitaly Friedman.</span>
+		
+		</address><!-- /#about -->
+		
+		<p>Based on <a href="http://smashingmagazine.com">Smashing Magazine</a> template. for <a href="http://liferay.com">Liferay</a> by <a href="http://microblog.wasimshaikh.com">Wasim Shaikh</a></p>
+	</footer>
+</body>
+
+$theme.include($bottom_include)
+
+</html>

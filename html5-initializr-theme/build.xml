@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<project name="html5-initializr-theme" basedir="." default="deploy">
+	<import file="../build-common-theme.xml" />
+
+	<property name="theme.parent" value="classic" />
+</project>

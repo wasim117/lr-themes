@@ -1,0 +1,80 @@
+<!doctype html>
+
+#parse ($init)
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="#language("lang.dir")" dir="#language("lang.dir")" lang="$w3c_language_id"> <!--<![endif]-->
+
+<head>
+	<title>$the_title - $company_name</title>
+
+	$theme.include($top_head_include)
+</head>
+
+<body class="$css_class">
+
+#if($is_signed_in)
+	#dockbar()
+#end
+
+<div id="wrapper">
+	<a href="#main-content" id="skip-to-content">#language("skip-to-content")</a>
+	<div id="header-container">
+		<header class="wrapper">
+			<h1 id="title">$company_name</h1>
+			
+			#if ($has_navigation)
+				#parse ("$full_templates_path/navigation.vm")
+			#end
+			
+			<!--
+			<nav id="main_navigation">
+				<ul>
+					<li><a href="#">Some</a></li>
+					<li><a href="#">navigation</a></li>
+					<li><a href="#">links</a></li>
+				</ul>
+			</nav>-->
+		</header>
+	</div>
+	<div id="content" class="wrapper">
+		<!--<nav class="site-breadcrumbs" id="breadcrumbs">
+			<h1>
+				<span>#language("breadcrumbs")</span>
+			</h1>
+
+			#breadcrumbs()
+		</nav>
+		-->
+
+		#if ($selectable)
+			$theme.include($content_include)
+		#else
+			$portletDisplay.recycle()
+
+			$portletDisplay.setTitle($the_title)
+
+			$theme.wrapPortlet("portlet.vm", $content_include)
+		#end
+	</div>
+	<div id="footer-container">
+		<footer class="wrapper">
+			<h3>A nice footer</h3><p class="powered-by">
+			#language("powered-by") <a href="http://www.liferay.com" rel="external">Liferay</a> Based on <a href="http://initializr.com/">HTML5 initializr</a>
+		</p>
+		<p>
+		Brought to you by <a href="http://wasimshaikh.com">Wasim Shaikh</a>
+		</p>
+		
+		</footer>
+	</div>
+</div>
+
+</body>
+
+$theme.include($bottom_include)
+
+</html>
