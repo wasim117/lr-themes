@@ -54,6 +54,7 @@ body #banner .logo a {
 	float: left;
 }
 
+#navigation h1,
 .current-community {
 	display: none;
 }
